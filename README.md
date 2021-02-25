@@ -35,6 +35,9 @@ $ yarn install
 ## Running the app
 
 ```bash
+#initiate MongoDB
+$ docker-compose up -d
+
 # development
 $ yarn start
 
