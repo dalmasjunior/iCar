@@ -1,0 +1,34 @@
+scalar ObjectId
+
+type Car {
+  make: String!
+  type: String!
+  version: String!
+  year: Float!
+  kilometers: Float!
+  transmission: String!
+  price: Float!
+  _id: ObjectId!
+}
+
+type Query {
+  getCars: [Car!]!
+  getCar(car: [CarInput!]!): [Car!]!
+  getCarInYearsPrice(from: Float!, to: Float!, field: String!): [Car!]!
+}
+
+input CarInput {
+  _id: String
+  make: String
+  type: String
+  version: String
+  year: Float
+  kilometers: Float
+  transmission: String
+  price: Float
+}
+
+type Mutation {
+  createCar(input: CarInput!): Car!
+  updateCar(id: String!, car: CarInput!): Car!
+}
